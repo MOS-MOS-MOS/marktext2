@@ -3,9 +3,9 @@ import * as actions from '../actions/view'
 
 export default function (keybindings) {
   const viewMenu = {
-    label: '&View',
+    label: '&表示',
     submenu: [{
-      label: 'Command Palette...',
+      label: 'コマンドパレット',
       accelerator: keybindings.getAccelerator('view.command-palette'),
       click (menuItem, browserWindow) {
         actions.showCommandPalette(browserWindow)
@@ -14,7 +14,7 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       id: 'sourceCodeModeMenuItem',
-      label: 'Source Code Mode',
+      label: 'ソースコードモード',
       accelerator: keybindings.getAccelerator('view.source-code-mode'),
       type: 'checkbox',
       checked: false,
@@ -27,7 +27,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'typewriterModeMenuItem',
-      label: 'Typewriter Mode',
+      label: 'タイプライターモード',
       accelerator: keybindings.getAccelerator('view.typewriter-mode'),
       type: 'checkbox',
       checked: false,
@@ -40,7 +40,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'focusModeMenuItem',
-      label: 'Focus Mode',
+      label: 'フォーカスモード',
       accelerator: keybindings.getAccelerator('view.focus-mode'),
       type: 'checkbox',
       checked: false,
@@ -54,7 +54,7 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Show Sidebar',
+      label: 'サイドバーを表示',
       id: 'sideBarMenuItem',
       accelerator: keybindings.getAccelerator('view.toggle-sidebar'),
       type: 'checkbox',
@@ -68,7 +68,7 @@ export default function (keybindings) {
         actions.layout(item, browserWindow, 'showSideBar')
       }
     }, {
-      label: 'Show Tab Bar',
+      label: 'タブバーを表示',
       id: 'tabBarMenuItem',
       accelerator: keybindings.getAccelerator('view.toggle-tabbar'),
       type: 'checkbox',
@@ -82,14 +82,14 @@ export default function (keybindings) {
         actions.layout(item, browserWindow, 'showTabBar')
       }
     }, {
-      label: 'Toggle Table of Contents',
+      label: 'トグル目次',
       id: 'tocMenuItem',
       accelerator: keybindings.getAccelerator('view.toggle-toc'),
       click (_, browserWindow) {
         actions.layout(null, browserWindow, 'rightColumn', 'toc')
       }
     }, {
-      label: 'Reload Images',
+      label: '画像の再読み込み',
       accelerator: keybindings.getAccelerator('view.reload-images'),
       click (item, focusedWindow) {
         if (focusedWindow) {
@@ -103,7 +103,7 @@ export default function (keybindings) {
 
   if (global.MARKTEXT_DEBUG) {
     viewMenu.submenu.push({
-      label: 'Show Developer Tools',
+      label: 'デベロッパーツールを表示',
       accelerator: keybindings.getAccelerator('view.toggle-dev-tools'),
       click (item, focusedWindow) {
         if (focusedWindow) {
@@ -112,7 +112,7 @@ export default function (keybindings) {
       }
     })
     viewMenu.submenu.push({
-      label: 'Reload window',
+      label: 'ウィンドウの再読み込み',
       accelerator: keybindings.getAccelerator('view.dev-reload'),
       click (item, focusedWindow) {
         if (focusedWindow) {

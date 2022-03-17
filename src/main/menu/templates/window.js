@@ -5,17 +5,17 @@ import { isOsx } from '../../config'
 
 export default function (keybindings) {
   const menu = {
-    label: '&Window',
+    label: '&ウィンドウ',
     role: 'window',
     submenu: [{
-      label: 'Minimize',
+      label: 'ミニマム',
       accelerator: keybindings.getAccelerator('window.minimize'),
       click (menuItem, browserWindow) {
         minimizeWindow(browserWindow)
       }
     }, {
       id: 'alwaysOnTopMenuItem',
-      label: 'Always on Top',
+      label: '常にトップ',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('window.toggle-always-on-top'),
       click (menuItem, browserWindow) {
@@ -24,13 +24,13 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Zoom In',
+      label: 'ズームイン',
       accelerator: keybindings.getAccelerator('window.zoom-in'),
       click (menuItem, browserWindow) {
         zoomIn(browserWindow)
       }
     }, {
-      label: 'Zoom Out',
+      label: 'ズームアウト',
       accelerator: keybindings.getAccelerator('window.zoom-out'),
       click (menuItem, browserWindow) {
         zoomOut(browserWindow)
@@ -38,7 +38,7 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Show in Full Screen',
+      label: 'フルスクリーンで表示する',
       accelerator: keybindings.getAccelerator('window.toggle-full-screen'),
       click (item, focusedWindow) {
         if (focusedWindow) {
@@ -50,7 +50,7 @@ export default function (keybindings) {
 
   if (isOsx) {
     menu.submenu.push({
-      label: 'Bring All to Front',
+      label: '全て最前面表示',
       click () {
         Menu.sendActionToFirstResponder('arrangeInFront:')
       }

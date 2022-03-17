@@ -3,15 +3,15 @@ import { isOsx } from '../../config'
 
 export default function (keybindings) {
   return {
-    label: '&Edit',
+    label: '&編集',
     submenu: [{
-      label: 'Undo',
+      label: '一つ戻る',
       accelerator: keybindings.getAccelerator('edit.undo'),
       click: (menuItem, browserWindow) => {
         actions.edit(browserWindow, 'undo')
       }
     }, {
-      label: 'Redo',
+      label: '一つ進む',
       accelerator: keybindings.getAccelerator('edit.redo'),
       click: (menuItem, browserWindow) => {
         actions.edit(browserWindow, 'redo')
@@ -19,19 +19,19 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Cut',
+      label: 'カット',
       accelerator: keybindings.getAccelerator('edit.cut'),
       click (menuItem, browserWindow) {
         actions.nativeCut(browserWindow)
       }
     }, {
-      label: 'Copy',
+      label: 'コピー',
       accelerator: keybindings.getAccelerator('edit.copy'),
       click (menuItem, browserWindow) {
         actions.nativeCopy(browserWindow)
       }
     }, {
-      label: 'Paste',
+      label: '貼り付け',
       accelerator: keybindings.getAccelerator('edit.paste'),
       click (menuItem, browserWindow) {
         actions.nativePaste(browserWindow)
@@ -39,19 +39,19 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Copy as Markdown',
+      label: 'Markdownとしてコピーする',
       accelerator: keybindings.getAccelerator('edit.copy-as-markdown'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'copyAsMarkdown')
       }
     }, {
-      label: 'Copy as HTML',
+      label: 'HTMLとしてコピーする',
       accelerator: keybindings.getAccelerator('edit.copy-as-html'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'copyAsHtml')
       }
     }, {
-      label: 'Paste as Plain Text',
+      label: 'プレーンテキストとして貼り付け',
       accelerator: keybindings.getAccelerator('edit.paste-as-plaintext'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'pasteAsPlainText')
@@ -59,7 +59,7 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Select All',
+      label: '全て選択',
       accelerator: keybindings.getAccelerator('edit.select-all'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'selectAll')
@@ -67,19 +67,19 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Duplicate',
+      label: '複製',
       accelerator: keybindings.getAccelerator('edit.duplicate'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'duplicate')
       }
     }, {
-      label: 'Create Paragraph',
+      label: 'パラグラフの作成',
       accelerator: keybindings.getAccelerator('edit.create-paragraph'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'createParagraph')
       }
     }, {
-      label: 'Delete Paragraph',
+      label: 'パラグラフの削除',
       accelerator: keybindings.getAccelerator('edit.delete-paragraph'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'deleteParagraph')
@@ -87,33 +87,33 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Find',
+      label: '検索',
       accelerator: keybindings.getAccelerator('edit.find'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'find')
       }
     }, {
-      label: 'Find Next',
+      label: '次を探す',
       accelerator: keybindings.getAccelerator('edit.find-next'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'findNext')
       }
     }, {
-      label: 'Find Previous',
+      label: '前ページを探す',
       accelerator: keybindings.getAccelerator('edit.find-previous'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'findPrev')
       }
     }, {
-      label: 'Replace',
-      accelerator: keybindings.getAccelerator('edit.replace'),
+      label: '置換',
+      accelerator: keybindings.getAccelerator('検索'),
       click (menuItem, browserWindow) {
-        actions.edit(browserWindow, 'replace')
+        actions.edit(browserWindow, '置換')
       }
     }, {
       type: 'separator'
     }, {
-      label: 'Find in Folder',
+      label: 'フォルダを検索',
       accelerator: keybindings.getAccelerator('edit.find-in-folder'),
       click (menuItem, browserWindow) {
         actions.edit(browserWindow, 'findInFolder')
@@ -121,7 +121,7 @@ export default function (keybindings) {
     }, {
       type: 'separator'
     }, {
-      label: 'Screenshot',
+      label: 'スクリーンショット',
       id: 'screenshot',
       visible: isOsx,
       accelerator: keybindings.getAccelerator('edit.screenshot'),
@@ -132,17 +132,17 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       // TODO: Remove this menu entry and add it to the command palette (#1408).
-      label: 'Line Ending',
+      label: 'ライン終了',
       submenu: [{
         id: 'crlfLineEndingMenuEntry',
-        label: 'Carriage return and line feed (CRLF)',
+        label: 'キャリッジリターン＆ラインフィード（CRLF）',
         type: 'radio',
         click (menuItem, browserWindow) {
           actions.lineEnding(browserWindow, 'crlf')
         }
       }, {
         id: 'lfLineEndingMenuEntry',
-        label: 'Line feed (LF)',
+        label: 'ラインフィード(LF)',
         type: 'radio',
         click (menuItem, browserWindow) {
           actions.lineEnding(browserWindow, 'lf')

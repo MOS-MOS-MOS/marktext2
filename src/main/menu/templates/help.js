@@ -29,66 +29,66 @@ const isUpdatable = () => {
 
 export default function () {
   const helpMenu = {
-    label: '&Help',
+    label: '&ヘルプ',
     role: 'help',
     submenu: [{
-      label: 'Quick Start...',
+      label: 'クイックスタート',
       click () {
         shell.openExternal('https://github.com/marktext/marktext/blob/master/docs/README.md')
       }
     }, {
-      label: 'Markdown Reference...',
+      label: 'マークダウンリファレンス',
       click () {
         shell.openExternal('https://github.com/marktext/marktext/blob/master/docs/MARKDOWN_SYNTAX.md')
       }
     }, {
-      label: 'Changelog...',
+      label: '更新履歴',
       click () {
         shell.openExternal('https://github.com/marktext/marktext/blob/master/.github/CHANGELOG.md')
       }
     }, {
       type: 'separator'
     }, {
-      label: 'Donate via Open Collective...',
+      label: 'OpenCollectiveで寄付をする',
       click (item, win) {
         shell.openExternal('https://opencollective.com/marktext')
       }
     }, {
-      label: 'Feedback via Twitter...',
+      label: 'Twitterでのフィードバック',
       click (item, win) {
         actions.showTweetDialog(win, 'twitter')
       }
     }, {
-      label: 'Report Issue or Request Feature...',
+      label: '問題の報告または機能のリクエスト',
       click () {
         shell.openExternal('https://github.com/marktext/marktext/issues')
       }
     }, {
       type: 'separator'
     }, {
-      label: 'Website...',
+      label: 'Webサイト（英語）',
       click () {
         shell.openExternal('https://marktext.app')
       }
     }, {
-      label: 'Watch on GitHub...',
+      label: 'GitHubで見る',
       click () {
         shell.openExternal('https://github.com/marktext/marktext')
       }
     }, {
-      label: 'Follow us on Github...',
+      label: 'Githubでフォローする',
       click () {
         shell.openExternal('https://github.com/Jocs')
       }
     }, {
-      label: 'Follow us on Twitter...',
+      label: 'Twitterでフォローする',
       click () {
         shell.openExternal('https://twitter.com/marktextapp')
       }
     }, {
       type: 'separator'
     }, {
-      label: 'License...',
+      label: 'ライセンス...',
       click () {
         shell.openExternal('https://github.com/marktext/marktext/blob/master/LICENSE')
       }
@@ -110,7 +110,7 @@ export default function () {
     helpMenu.submenu.push({
       type: 'separator'
     }, {
-      label: 'About MarkText...',
+      label: 'MarkTextについて',
       click (menuItem, browserWindow) {
         actions.showAboutDialog(browserWindow)
       }

@@ -5,7 +5,7 @@ asar: true
 asarUnpack:
 - "**/*.node"
 directories:
-  output: "build"
+  output: "dist"
 # Workaround: Don't download prebuilt libraries (GH#2953).
 buildDependenciesFromSource: true
 files:
@@ -97,7 +97,7 @@ win:
   artifactName: "marktext-${arch}-win.${ext}"
   icon: "resources/icons/icon.ico"
   target:
-  - target: "nsis"
+  - target: "portable"
     arch: [ia32, x64]
   - target: "zip"
     arch: [ia32, x64]

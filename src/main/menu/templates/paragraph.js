@@ -3,10 +3,10 @@ import * as actions from '../actions/paragraph'
 export default function (keybindings) {
   return {
     id: 'paragraphMenuEntry',
-    label: '&Paragraph',
+    label: '&パラグラフ',
     submenu: [{
       id: 'heading1MenuItem',
-      label: 'Heading 1',
+      label: '見出し1',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-1'),
       click (menuItem, browserWindow) {
@@ -14,7 +14,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading2MenuItem',
-      label: 'Heading 2',
+      label: '見出し2',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-2'),
       click (menuItem, browserWindow) {
@@ -22,7 +22,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading3MenuItem',
-      label: 'Heading 3',
+      label: '見出し3',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-3'),
       click (menuItem, browserWindow) {
@@ -30,7 +30,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading4MenuItem',
-      label: 'Heading 4',
+      label: '見出し4',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-4'),
       click (menuItem, browserWindow) {
@@ -38,7 +38,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading5MenuItem',
-      label: 'Heading 5',
+      label: '見出し5',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-5'),
       click (menuItem, browserWindow) {
@@ -46,7 +46,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'heading6MenuItem',
-      label: 'Heading 6',
+      label: '見出し6',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.heading-6'),
       click (menuItem, browserWindow) {
@@ -56,14 +56,14 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       id: 'upgradeHeadingMenuItem',
-      label: 'Promote Heading',
+      label: 'プロモート見出し',
       accelerator: keybindings.getAccelerator('paragraph.upgrade-heading'),
       click (menuItem, browserWindow) {
         actions.paragraph(browserWindow, 'upgrade heading')
       }
     }, {
       id: 'degradeHeadingMenuItem',
-      label: 'Demote Heading',
+      label: 'ヘッディングの削除',
       accelerator: keybindings.getAccelerator('paragraph.degrade-heading'),
       click (menuItem, browserWindow) {
         actions.paragraph(browserWindow, 'degrade heading')
@@ -72,7 +72,7 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       id: 'tableMenuItem',
-      label: 'Table',
+      label: 'テーブル',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.table'),
       click (menuItem, browserWindow) {
@@ -80,7 +80,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'codeFencesMenuItem',
-      label: 'Code Fences',
+      label: 'コードフェンス',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.code-fence'),
       click (menuItem, browserWindow) {
@@ -88,7 +88,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'quoteBlockMenuItem',
-      label: 'Quote Block',
+      label: '引用ブロック',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.quote-block'),
       click (menuItem, browserWindow) {
@@ -96,7 +96,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'mathBlockMenuItem',
-      label: 'Math Block',
+      label: '算数ブロック',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.math-formula'),
       click (menuItem, browserWindow) {
@@ -104,7 +104,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'htmlBlockMenuItem',
-      label: 'Html Block',
+      label: 'HTMLブロック',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.html-block'),
       click (menuItem, browserWindow) {
@@ -114,7 +114,7 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       id: 'orderListMenuItem',
-      label: 'Ordered List',
+      label: '順序付きリスト',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.order-list'),
       click (menuItem, browserWindow) {
@@ -122,7 +122,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'bulletListMenuItem',
-      label: 'Bullet List',
+      label: '箇条書きリスト',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.bullet-list'),
       click (menuItem, browserWindow) {
@@ -130,7 +130,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'taskListMenuItem',
-      label: 'Task List',
+      label: 'チェックボックス付きリスト',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.task-list'),
       click (menuItem, browserWindow) {
@@ -140,7 +140,7 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       id: 'looseListItemMenuItem',
-      label: 'Loose List Item',
+      label: 'ルーズリスト項目',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.loose-list-item'),
       click (menuItem, browserWindow) {
@@ -150,7 +150,7 @@ export default function (keybindings) {
       type: 'separator'
     }, {
       id: 'paragraphMenuItem',
-      label: 'Paragraph',
+      label: '文章',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.paragraph'),
       click (menuItem, browserWindow) {
@@ -158,7 +158,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'horizontalLineMenuItem',
-      label: 'Horizontal Rule',
+      label: '水平線',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.horizontal-line'),
       click (menuItem, browserWindow) {
@@ -166,7 +166,7 @@ export default function (keybindings) {
       }
     }, {
       id: 'frontMatterMenuItem',
-      label: 'Front Matter',
+      label: 'フロントマター',
       type: 'checkbox',
       accelerator: keybindings.getAccelerator('paragraph.front-matter'),
       click (menuItem, browserWindow) {

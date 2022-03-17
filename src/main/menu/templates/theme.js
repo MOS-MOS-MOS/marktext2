@@ -3,10 +3,10 @@ import * as actions from '../actions/theme'
 export default function (userPreference) {
   const { theme } = userPreference.getAll()
   return {
-    label: '&Theme',
+    label: '&テーマ',
     id: 'themeMenu',
     submenu: [{
-      label: 'Cadmium Light',
+      label: 'カドミウム・ライト',
       type: 'radio',
       id: 'light',
       checked: theme === 'light',
@@ -14,7 +14,7 @@ export default function (userPreference) {
         actions.selectTheme('light')
       }
     }, {
-      label: 'Dark',
+      label: 'ダーク',
       type: 'radio',
       id: 'dark',
       checked: theme === 'dark',
@@ -22,7 +22,7 @@ export default function (userPreference) {
         actions.selectTheme('dark')
       }
     }, {
-      label: 'Graphite Light',
+      label: 'グラファイト・ライト',
       type: 'radio',
       id: 'graphite',
       checked: theme === 'graphite',
@@ -30,7 +30,7 @@ export default function (userPreference) {
         actions.selectTheme('graphite')
       }
     }, {
-      label: 'Material Dark',
+      label: 'マテリアル・ダーク',
       type: 'radio',
       id: 'material-dark',
       checked: theme === 'material-dark',
@@ -38,7 +38,7 @@ export default function (userPreference) {
         actions.selectTheme('material-dark')
       }
     }, {
-      label: 'One Dark',
+      label: 'ワン・ダーク',
       type: 'radio',
       id: 'one-dark',
       checked: theme === 'one-dark',
@@ -46,7 +46,7 @@ export default function (userPreference) {
         actions.selectTheme('one-dark')
       }
     }, {
-      label: 'Ulysses Light',
+      label: 'ユリシーズ・ライト',
       type: 'radio',
       id: 'ulysses',
       checked: theme === 'ulysses',

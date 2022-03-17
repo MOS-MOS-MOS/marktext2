@@ -41,7 +41,7 @@ export const quickInsertObj = {
     shortCut: `${COMMAND_KEY}+0`,
     icon: paragraphIcon
   }, {
-    title: 'Horizontal Line',
+    title: '水平線',
     subTitle: '---',
     label: 'hr',
     shortCut: `${OPTION_KEY}+${COMMAND_KEY}+-`,
